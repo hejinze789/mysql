@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<form  method="post">
+			<input type="text" value="" id="user"/>
+		</form>
+		<button onclick="fun()">提交</button>
+		<button onclick="del()">删除</button>
+		<button onclick="up()">更新</button>
+		<button onclick="inquire()">查询</button>
+	</body>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script>
+		function fun(){
+			var name=$("#user").val()
+			$.ajax({
+				url:"http://127.0.0.1:8084/add",
+				type:"POST",
+				data:{user:name},
+				success:function(res){
+				}
+			});
+		}
+		function del(){
+			var name=$("#user").val()
+			$.ajax({
+				url:"http://127.0.0.1:8084/dlete",
+				type:"POST",
+				data:{user:name},
+				success:function(res){
+				}
+			});
+		}
+		function up(){
+			var name=$("#user").val()
+			$.ajax({
+				url:"http://127.0.0.1:8084/updata",
+				type:"POST",
+				data:{user:name},
+				success:function(res){
+				}
+			});
+		}
+		function inquire(){
+			var name=$("#user").val();
+		$.ajax({
+				url:"http://127.0.0.1:8084/inquire",
+				type:"POST",
+				data:{user:name},
+				success:function(res){
+				}
+			});
+		}
+	</script>
+</html>
